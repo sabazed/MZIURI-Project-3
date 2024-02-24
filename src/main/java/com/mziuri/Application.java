@@ -1,5 +1,7 @@
 package com.mziuri;
 
+import com.mziuri.Service.DatabaseManager;
+import com.mziuri.Service.StorageReader;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.core.StandardContext;
@@ -8,10 +10,13 @@ import org.apache.catalina.webresources.DirResourceSet;
 import org.apache.catalina.webresources.StandardRoot;
 
 import java.io.File;
+import java.io.IOException;
 
 public class Application {
 
-    public static void main(String[] args) throws LifecycleException {
+    public static void main(String[] args) throws LifecycleException, IOException {
+        DatabaseManager manager=new DatabaseManager();
+        manager.setup();
 
         Tomcat tomcat = new Tomcat();
         tomcat.enableNaming();
