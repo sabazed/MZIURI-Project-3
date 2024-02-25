@@ -1,0 +1,31 @@
+#main{
+    margin: 15%;
+    text-align: center;
+}
+#tbl,#productTitle{
+    border: 2px solid black;
+}
+.productList{
+    display: inline-flex;
+    border: 1PX solid gray;
+    width: 100%;
+}
+.candy{
+    margin-left: 15px;
+    margin-right: auto; 
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.purchase{
+    color: green;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: 15px; 
+    margin-top: 5px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(27, 26, 26, 0.781);   
+}
+.purchase:hover{
+    border: green 3px solid;
+}
