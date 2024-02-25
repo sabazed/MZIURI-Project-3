@@ -54,5 +54,22 @@ public class DatabaseManager {
             entityManager.close();
         }
     }
+
+    public void updateProduct(Product product) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        try {
+            entityManager.getTransaction().begin();
+            if (product.getId() != 0) {
+                entityManager.merge(product);
+            } else {
+
+                entityManager.persist(product);
+            }
+            entityManager.getTransaction().commit();
+        } finally {
+            entityManager.close();
+        }
+    }
+
 }
 

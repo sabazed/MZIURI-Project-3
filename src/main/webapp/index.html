@@ -2,9 +2,142 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Product List</title>
+	<style>
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
+
+<h2>Product List</h2>
+
+<table>
+	<tr>
+		<th>Product Name</th>
+		<th>Price</th>
+		<th>Availability</th>
+		<th>Action</th>
+	</tr>
+	<tr>
+		<td>Snickers</td>
+		<td>$2.10</td>
+		<td>10</td>
+		<td><button class="btn" onclick="buyNow('Snickers')">Purchase</button></td>
+	</tr>
+	<tr>
+		<td>Twix</td>
+		<td>$3.50</td>
+		<td>15</td>
+		<td><button class="btn" onclick="buyNow('Twix')">Purchase</button></td>
+	</tr>
+	<tr>
+		<td>Mars</td>
+		<td>$1.80</td>
+		<td>30</td>
+		<td><button class="btn" onclick="buyNow('Mars')">Purchase</button></td>
+	</tr>
+	<tr>
+		<td>Java</td>
+		<td>$9.85</td>
+		<td>5</td>
+		<td><button class="btn" onclick="buyNow('Java')">Purchase</button></td>
+	</tr>
+	<tr>
+		<td>Milka</td>
+		<td>$0.90</td>
+		<td>20</td>
+		<td><button class="btn" onclick="buyNow('Milka')">Purchase</button></td>
+	</tr>
+</table>
+
+<div id="purchaseModal" class="modal">
+	<div class="modal-content">
+		<span class="close">&times;</span>
+		<h3 id="productName"></h3>
+		<p>Price: <span id="productPrice"></span></p>
+		<p>Availability: <span id="productAvailability"></span></p>
+		<label for="quantity">Quantity:</label>
+		<input type="number" id="quantity" name="quantity" min="1">
+		<button class="btn" onclick="buyNow()">Buy Now</button>
+	</div>
+</div>
+
+<script>
+
+    var modal = document.getElementById("purchaseModal");
+
+
+    var span = document.getElementsByClassName("close")[0];
+
+    function buyNow(productName) {
+        var productNameElement = document.getElementById("productName");
+        var productPriceElement = document.getElementById("productPrice");
+        var productAvailabilityElement = document.getElementById("productAvailability");
+        var quantityInput = document.getElementById("quantity");
+
+        productNameElement.innerText = productName;
+
+        if (productName === "Snickers") {
+            productPriceElement.innerText = "$2.10";
+            productAvailabilityElement.innerText = "10";
+        } else if (productName === "Twix") {
+            productPriceElement.innerText = "$3.50";
+            productAvailabilityElement.innerText = "15";
+        } else if (productName === "Mars") {
+            productPriceElement.innerText = "$1.80";
+            productAvailabilityElement.innerText = "30";
+        } else if (productName === "Java") {
+            productPriceElement.innerText = "$9.85";
+            productAvailabilityElement.innerText = "5";
+        } else if (productName === "Milka") {
+            productPriceElement.innerText = "$0.90";
+            productAvailabilityElement.innerText = "20";
+        }
+
+        modal.style.display = "block";
+    }
+
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 
 </body>
 </html>
