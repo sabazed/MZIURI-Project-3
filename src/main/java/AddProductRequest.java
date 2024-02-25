@@ -1,6 +1,6 @@
 public class AddProductRequest {
     private String password;
-    private String name;
+    private static String name;
     private Integer amount;
 
     public Integer getAmount() {
@@ -11,7 +11,7 @@ public class AddProductRequest {
         this.amount = amount;
     }
 
-    public String getName() {
+    public static String getName() {
         return name;
     }
 

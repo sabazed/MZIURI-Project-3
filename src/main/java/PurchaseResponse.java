@@ -1,4 +1,7 @@
 public class PurchaseResponse {
+    public PurchaseResponse() {
+    }
+
     public String getName() {
         return name;
     }

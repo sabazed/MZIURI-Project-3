@@ -1,6 +1,4 @@
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
+import jakarta.persistence.*;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
@@ -29,7 +27,22 @@ public class DatabaseManager {
         }
     }
 
+
+    public Product getProductByName(String productName) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        try {
+            TypedQuery<Product> query = entityManager.createQuery("SELECT p FROM Product p WHERE p.name = :name", Product.class);
+            query.setParameter("name", productName);
+            return query.getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        } finally {
+            entityManager.close();
+        }
+    }
+
     public List<Product> getProducts() {
+
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
             CriteriaBuilder cb = entityManager.getCriteriaBuilder();
