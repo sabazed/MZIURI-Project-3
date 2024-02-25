@@ -4,9 +4,33 @@
 	<meta charset="UTF-8">
 	<script src="storage.js"></script>
 	<link rel="stylesheet" type="text/css" href="storage.css">
-	<title>Candy Shop</title>
+	<title>Storage</title>
 </head>
 <body>
-	<p>assadfasbbbbbbbbbbbbb</p>
+	<div id="main">
+		<h1>Candy Shop</h1>
+		<div id="tbl">
+			<div class="productTitle">
+				<h2>Storage</h2>
+			</div>
+			<div class="productTitle">
+				<form>
+					<div>
+						<label for="name">Name:</label><br>
+						<input type="text" id="name" name="name"><br>
+					</div>
+					<div>
+						<label for="amount">Amount:</label><br>
+						<input type="text" id="amount" name="amount">
+					</div>
+					<div>
+						<label for="password">Password:</label><br>
+						<input type="text" id="password" name="password">
+					</div>
+					<input type="button" onclick="addProduct()" value="add products">
+				</form>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

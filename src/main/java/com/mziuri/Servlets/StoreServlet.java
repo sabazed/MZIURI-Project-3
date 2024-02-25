@@ -16,7 +16,6 @@ public class StoreServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
-//        resp.setContentType("application/json");
 
         String[] productNames=new GetProductsResponse().getProductNames();
         String response= Arrays.toString(productNames);

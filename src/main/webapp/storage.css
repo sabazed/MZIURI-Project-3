@@ -1,0 +1,31 @@
+#main{
+    margin: 10% 30%;
+    text-align: center;
+}
+#tbl,.productTitle{
+    border: 2px solid black;
+}
+form div{
+    display: flex;
+    margin-top: 2px;
+}
+form div label{
+    margin-left: 15px;
+    margin-right: auto;
+}
+form div input{
+    margin-right: 15px;
+    margin-left: auto;
+}
+input[type="button"]{
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: 15px; 
+    margin-top: 5px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border: 1px solid red;   
+}
+input[type="button"]:hover{
+    border: rgb(124, 0, 0) 3px solid;
+}

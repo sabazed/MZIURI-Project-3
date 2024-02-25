@@ -2,9 +2,7 @@ package com.mziuri.Responses;
 
 import com.mziuri.Classes.Product;
 import com.mziuri.Service.StorageReader;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.io.IOException;
 import java.util.Objects;
