@@ -42,6 +42,7 @@ public class ProductServlet extends HttpServlet {
             Product product=response.getProduct();
             ObjectMapper mapper=new ObjectMapper();
             String json=mapper.writeValueAsString(product);
+            System.out.println(json);
             resp.getWriter().write(json);
         }else {
             resp.sendError(405);

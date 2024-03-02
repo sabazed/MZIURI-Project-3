@@ -1,9 +1,10 @@
 async function addProduct(){
+    alert("dsfasdf");
     var name=document.getElementById("name").value;
     var password=document.getElementById("password").value;
-    var amount=document.getElementById(amount).value;
+    var amount=document.getElementById("amount").value;
     if(name==""||number==""){
-        alert("Name, Password and Amoint is Required");
+        alert("Name, Password and Amount is Required");
         return;
     }
     var url = "http://localhost:8989/phoneBook/manageNumber?password="+password+"&name="+name+"&amount="+amount;
