@@ -1,13 +1,12 @@
 async function addProduct(){
-    alert("dsfasdf");
     var name=document.getElementById("name").value;
     var password=document.getElementById("password").value;
     var amount=document.getElementById("amount").value;
-    if(name==""||number==""){
+    if(name==""||password==""||amount==""){
         alert("Name, Password and Amount is Required");
         return;
     }
-    var url = "http://localhost:8989/phoneBook/manageNumber?password="+password+"&name="+name+"&amount="+amount;
+    var url = "http://localhost:8989/candy-shop/store/product?password="+password+"&name="+name+"&amount="+amount;
     document.getElementById("name").value="";
     document.getElementById("password").value="";
     document.getElementById("amount").value="";
