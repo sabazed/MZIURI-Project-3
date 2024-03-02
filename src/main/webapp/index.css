@@ -28,4 +28,5 @@
 }
 .purchase:hover{
     border: green 3px solid;
+    cursor: pointer;
 }

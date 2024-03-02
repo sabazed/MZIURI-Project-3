@@ -28,4 +28,5 @@ input[type="button"]{
 }
 input[type="button"]:hover{
     border: rgb(124, 0, 0) 3px solid;
+    cursor: pointer;
 }

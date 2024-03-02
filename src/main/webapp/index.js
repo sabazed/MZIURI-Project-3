@@ -27,8 +27,8 @@ function addMessage(contact){
 }
 
 async function purchase(candy){
-    var newWindow = window.open(href="http://localhost:8989/candy-shop/buyMenu.html", windowname="asdfsd", 'width=400,height=150,status=yes,scrollbars=yes');
+    var newWindow = window.open(href="http://localhost:8989/candy-shop/buyMenu.html", windowname="asdfsd", 'width=250,height=200,status=yes,scrollbars=yes');
     newWindow.onload = function(){
-        newWindow.postMessage(candy);
+        newWindow.postMessage(candy,'*');
     }
 }

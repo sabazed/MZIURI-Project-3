@@ -16,11 +16,9 @@ public class PurchaseResponse {
     public PurchaseResponse(PurchaseRequest request) throws IOException {
         this.name = request.getName();
         GetProductInfoResponse info=new GetProductInfoResponse(name);
-        valid = info.exists();
-        if (valid) {
-            this.product = info.getProduct();
-            remainingAmount = product.getAmount() - request.getAmount();
-        }
+        this.product = info.getProduct();
+        remainingAmount = product.getAmount() - request.getAmount();
+        valid=remainingAmount>=0;
     }
     public boolean purchase() throws IOException {
         if (!valid()){
